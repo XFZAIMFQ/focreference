@@ -1,0 +1,15 @@
+.locale-button {
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  padding: .25rem .6rem;
+  margin-left: .5rem;
+  white-space: nowrap;
+  font-weight: 700;
+}
+html[lang="zh-CN"] body {
+  font-family: system-ui, "Microsoft YaHei", "PingFang SC", sans-serif;
+}
+html[lang="zh-CN"] .prose,
+html[lang="zh-CN"] main {
+  overflow-wrap: anywhere;
+}

@@ -1,0 +1,16 @@
+{
+  "name": "foc-reference-zh-local",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev --host 127.0.0.1",
+    "build": "astro build && pagefind --site dist && node scripts/sync-search.mjs",
+    "preview": "astro preview --host 127.0.0.1"
+  },
+  "dependencies": {
+    "astro": "^5.0.0"
+  },
+  "devDependencies": {
+    "pagefind": "^1.0.0"
+  }
+}

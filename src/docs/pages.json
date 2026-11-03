@@ -1,0 +1,147 @@
+[
+  {
+    "path": "/",
+    "title": "Field-oriented control — FOC Reference",
+    "file": "index.html"
+  },
+  {
+    "path": "/control/current-loop/",
+    "title": "The current loop — FOC Reference",
+    "file": "control__current-loop.html"
+  },
+  {
+    "path": "/control/sampled-time/",
+    "title": "Sampled time — FOC Reference",
+    "file": "control__sampled-time.html"
+  },
+  {
+    "path": "/control/sensorless/",
+    "title": "Sensorless position — FOC Reference",
+    "file": "control__sensorless.html"
+  },
+  {
+    "path": "/control/speed-loops/",
+    "title": "Speed and position loops — FOC Reference",
+    "file": "control__speed-loops.html"
+  },
+  {
+    "path": "/failures/",
+    "title": "What goes wrong — FOC Reference",
+    "file": "failures.html"
+  },
+  {
+    "path": "/formulas/",
+    "title": "Formula sheet — FOC Reference",
+    "file": "formulas.html"
+  },
+  {
+    "path": "/foundations/clarke-park/",
+    "title": "Clarke and Park — FOC Reference",
+    "file": "foundations__clarke-park.html"
+  },
+  {
+    "path": "/foundations/per-unit/",
+    "title": "Per-unit and scaling — FOC Reference",
+    "file": "foundations__per-unit.html"
+  },
+  {
+    "path": "/foundations/power/",
+    "title": "Power in three phases — FOC Reference",
+    "file": "foundations__power.html"
+  },
+  {
+    "path": "/foundations/space-vectors/",
+    "title": "Space vectors — FOC Reference",
+    "file": "foundations__space-vectors.html"
+  },
+  {
+    "path": "/implementation/architecture/",
+    "title": "Software architecture — FOC Reference",
+    "file": "implementation__architecture.html"
+  },
+  {
+    "path": "/implementation/bring-up/",
+    "title": "Bringing a drive up — FOC Reference",
+    "file": "implementation__bring-up.html"
+  },
+  {
+    "path": "/implementation/peripherals/",
+    "title": "The peripherals it needs — FOC Reference",
+    "file": "implementation__peripherals.html"
+  },
+  {
+    "path": "/implementation/timing/",
+    "title": "Timing and synchronisation — FOC Reference",
+    "file": "implementation__timing.html"
+  },
+  {
+    "path": "/inverter/bridge/",
+    "title": "The bridge — FOC Reference",
+    "file": "inverter__bridge.html"
+  },
+  {
+    "path": "/inverter/deadtime/",
+    "title": "Deadtime — FOC Reference",
+    "file": "inverter__deadtime.html"
+  },
+  {
+    "path": "/inverter/six-step/",
+    "title": "Six-step commutation — FOC Reference",
+    "file": "inverter__six-step.html"
+  },
+  {
+    "path": "/inverter/svpwm/",
+    "title": "Space-vector PWM — FOC Reference",
+    "file": "inverter__svpwm.html"
+  },
+  {
+    "path": "/machine/dq-model/",
+    "title": "The PMSM dq model — FOC Reference",
+    "file": "machine__dq-model.html"
+  },
+  {
+    "path": "/machine/field-weakening/",
+    "title": "Field weakening — FOC Reference",
+    "file": "machine__field-weakening.html"
+  },
+  {
+    "path": "/machine/identification/",
+    "title": "Measuring the machine — FOC Reference",
+    "file": "machine__identification.html"
+  },
+  {
+    "path": "/machine/torque/",
+    "title": "Torque and MTPA — FOC Reference",
+    "file": "machine__torque.html"
+  },
+  {
+    "path": "/notation/",
+    "title": "Notation — FOC Reference",
+    "file": "notation.html"
+  },
+  {
+    "path": "/search/",
+    "title": "Search — FOC Reference",
+    "file": "search.html"
+  },
+  {
+    "path": "/sensing/adc/",
+    "title": "The converter — FOC Reference",
+    "file": "sensing__adc.html"
+  },
+  {
+    "path": "/sensing/current/",
+    "title": "Current measurement — FOC Reference",
+    "file": "sensing__current.html"
+  },
+  {
+    "path": "/sensing/dc-link/",
+    "title": "The DC link — FOC Reference",
+    "file": "sensing__dc-link.html"
+  },
+  {
+    "path": "/sensing/position/",
+    "title": "Position sensors — FOC Reference",
+    "file": "sensing__position.html"
+  }
+]

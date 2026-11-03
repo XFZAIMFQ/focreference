@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="FOC Reference">
+  <!-- The rotating current vector in the airgap: the site in one mark. -->
+  <circle cx="16" cy="16" r="13" fill="none" stroke="#6b6a65" stroke-width="2" />
+  <line x1="16" y1="16" x2="24.2" y2="8.6" stroke="#2a78d6" stroke-width="3" stroke-linecap="round" />
+  <circle cx="16" cy="16" r="2.6" fill="#2a78d6" />
+</svg>

@@ -1,0 +1,50 @@
+---
+import { readFileSync } from 'node:fs';
+import { join } from 'node:path';
+import pages from '../docs/pages.json';
+
+export function getStaticPaths() {
+  return pages.flatMap((page) => ['zh', 'en'].map((locale) => ({
+    params: { route: locale + (page.path === '/' ? '' : page.path.slice(0, -1)) },
+    props: { page, locale },
+  })));
+}
+
+const { page, locale } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
+const sourcePath = join(process.cwd(), 'src', 'docs', locale, page.file);
+const source = readFileSync(sourcePath, 'utf8');
+let head = source.match(/<head[^>]*>([\s\S]*?)<\/head>/i)?.[1] ?? '';
+let body = source.match(/<body[^>]*>([\s\S]*?)<\/body>/i)?.[1] ?? '';
+body += source.match(/<\/html>([\s\S]*)/i)?.[1] ?? '';
+head = head
+  .replace(/<link[^>]*rel="canonical"[^>]*>/gi, '')
+  .replace(/<meta[^>]*property="og:[^"]+"[^>]*>/gi, '')
+  .replace(/<meta[^>]*name="twitter:[^"]+"[^>]*>/gi, '')
+  .replace(/href=(["'])\/([^"']*)\1/g, (_m, q, p) => `href=${q}${base}${p}${q}`)
+  + `<link rel="stylesheet" href="${base}i18n.css">`;
+if (locale === 'zh') {
+  head = head.replace(/(<meta\s+content=")[^"]*("\s+name="description"[^>]*>)/i,
+    '$1FOC 交互式中文参考手册：从坐标变换、控制环路到中断服务程序。$2');
+}
+body = body
+  .replace(/href=(["'])\/([^"']*)\1/g, (_match, quote, path) => {
+    if (path.startsWith('_astro/') || path.startsWith('pagefind/') || /\.[a-z0-9]+(?:[?#].*)?$/i.test(path)) {
+      return `href=${quote}${base}${path}${quote}`;
+    }
+    return `href=${quote}${base}${locale}/${path ? path.replace(/\/?$/, '/') : ''}${quote}`;
+  })
+  .replace(/src=(["'])\/([^"']*)\1/g, (_match, quote, path) => `src=${quote}${base}${path}${quote}`)
+  .replace('"/pagefind/pagefind-ui.js"', `"${base}pagefind/pagefind-ui.js"`)
+  .replace('element:"#search",', `element:"#search",bundlePath:"${base}pagefind/",baseUrl:"${base}",`);
+const other = locale === 'zh' ? 'en' : 'zh';
+const langLabel = locale === 'zh' ? 'English' : '中文';
+const alternate = `${base}${other}${page.path}`;
+const localeButton = `<a class="masthead-link locale-button" href="${alternate}" lang="${other === 'zh' ? 'zh-CN' : 'en'}">${langLabel}</a>`;
+body = body.replace(/(<nav\b[^>]*\bclass="[^"]*\bmasthead-links\b[^"]*"[^>]*>)/, `$1${localeButton}`);
+---
+<!doctype html>
+<html lang={locale === 'zh' ? 'zh-CN' : 'en'}>
+  <head set:html={head} />
+  <body set:html={body} />
+</html>
