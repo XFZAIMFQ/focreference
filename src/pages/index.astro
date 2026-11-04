@@ -1,6 +1,5 @@
 ---
-const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
-const target = `${base}zh/`;
+const target = './zh/';
 ---
 <!doctype html>
 <html lang="zh-CN">
@@ -9,6 +8,10 @@ const target = `${base}zh/`;
     <meta http-equiv="refresh" content={`0; url=${target}`} />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>FOC 参考手册</title>
+    <script is:inline>
+      const p = window.location.pathname.replace(/\/index\.html$/, '').replace(/\/?$/, '/');
+      window.location.replace(p + 'zh/' + window.location.search + window.location.hash);
+    </script>
   </head>
   <body><a href={target}>进入中文版</a></body>
 </html>
